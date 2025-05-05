@@ -51,3 +51,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/radzi/source/repos/Wypozyczapka/Application/Views/Registration.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Application.Views.Registration.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Registration.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Registration.xaml
