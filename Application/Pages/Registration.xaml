@@ -4,13 +4,14 @@
              x:Class="Application.Views.Registration"
              BackgroundColor="#F8F8FF"
              Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False"
              Title="Rejestracja">
 
     <ScrollView>
         <VerticalStackLayout Spacing="0">
 
             <!-- Górny baner -->
-            <Grid HeightRequest="200" BackgroundColor="#F8F8FF">
+            <Grid BackgroundColor="#F8F8FF" HeightRequest="300">
                 <!-- Twoja grafika będzie tłem – dodasz przez Image lub jako Background -->
                 <BoxView BackgroundColor="Black" Opacity="0.1" />
 
@@ -35,9 +36,10 @@
                    CornerRadius="30"
                    HasShadow="False"
                    Padding="30"
+                   HeightRequest="1000"
                    Margin="0,-30,0,0">
 
-                <VerticalStackLayout Spacing="20">
+                <VerticalStackLayout Spacing="25" WidthRequest="450">
 
                     <Label Text="Rejestracja"
                            FontSize="28"
@@ -45,27 +47,28 @@
                            HorizontalOptions="Center" />
 
                     <!-- Imię i nazwisko -->
-                    <HorizontalStackLayout Spacing="10">
+                    <HorizontalStackLayout Spacing="10" WidthRequest="450">
                         <Image Source="user_icon.png" HeightRequest="20" WidthRequest="20"/>
-                        <Entry Placeholder="Imię i nazwisko" />
+                        <Entry Placeholder="Imię i nazwisko"
+                               WidthRequest="380"/>
                     </HorizontalStackLayout>
 
                     <!-- Email -->
-                    <HorizontalStackLayout Spacing="10">
+                    <HorizontalStackLayout Spacing="10" WidthRequest="450">
                         <Image Source="email_icon.png" HeightRequest="20" WidthRequest="20"/>
-                        <Entry Placeholder="Email" Keyboard="Email" />
+                        <Entry Placeholder="Email" Keyboard="Email" WidthRequest="380" />
                     </HorizontalStackLayout>
 
                     <!-- Hasło -->
-                    <HorizontalStackLayout Spacing="10">
+                    <HorizontalStackLayout Spacing="10" WidthRequest="450" >
                         <Image Source="lock_icon.png" HeightRequest="20" WidthRequest="20"/>
-                        <Entry Placeholder="Hasło" IsPassword="True" />
+                        <Entry Placeholder="Hasło" IsPassword="True" WidthRequest="380" />
                     </HorizontalStackLayout>
 
                     <!-- Powtórz hasło -->
-                    <HorizontalStackLayout Spacing="10">
+                    <HorizontalStackLayout Spacing="10" WidthRequest="450">
                         <Image Source="lock_icon.png" HeightRequest="20" WidthRequest="20"/>
-                        <Entry Placeholder="Powtórz hasło" IsPassword="True" />
+                        <Entry Placeholder="Powtórz hasło" IsPassword="True" WidthRequest="380" />
                     </HorizontalStackLayout>
 
                     <!-- Przycisk rejestracji -->
@@ -73,6 +76,9 @@
                             BackgroundColor="#EDE6D6"
                             TextColor="Black"
                             CornerRadius="10"
+                            WidthRequest="300"
+                            FontSize="Medium"
+                            HeightRequest="45"
                             FontAttributes="Bold" />
 
                     <!-- Link do logowania -->
@@ -81,7 +87,8 @@
                             <FormattedString>
                                 <Span Text="Masz już konto? " />
                                 <Span Text="Zaloguj się"
-                                      TextColor="Blue"
+                                      TextColor="Black"
+                                      FontAttributes="Bold"
                                       TextDecorations="Underline"/>
                                      <!-- GestureRecognizers="{StaticResource LoginTapGesture}" --> 
                             </FormattedString>
