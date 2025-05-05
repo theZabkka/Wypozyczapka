@@ -3,13 +3,14 @@
     x:Class="Application.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Application"
+    xmlns:local="clr-namespace:Application.Views"
     Shell.FlyoutBehavior="Flyout"
     Title="Application">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Rejestracja"
+        Route="RegistrationPage"
+        ContentTemplate="{DataTemplate local:Registration }"
+        Shell.TabBarIsVisible="False"/>
 
 </Shell>

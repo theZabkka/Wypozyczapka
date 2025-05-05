@@ -36,6 +36,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Application.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
+[C:/Users/radzi/source/repos/Wypozyczapka/Application/Pages/Registration.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Application.Pages.Registration.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Registration.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Registration.xaml
+
 [C:/Users/radzi/source/repos/Wypozyczapka/Application/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.Resources.Styles.Colors.xaml
@@ -47,9 +53,3 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
-
-[C:/Users/radzi/source/repos/Wypozyczapka/Application/Views/Registration.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Application.Views.Registration.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\Registration.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\Registration.xaml
