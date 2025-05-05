@@ -2,11 +2,95 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Application.Views.Registration"
-             Title="Registration">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             BackgroundColor="#F8F8FF"
+             Shell.TabBarIsVisible="False"
+             Title="Rejestracja">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <!-- Górny baner -->
+            <Grid HeightRequest="200" BackgroundColor="#F8F8FF">
+                <!-- Twoja grafika będzie tłem – dodasz przez Image lub jako Background -->
+                <BoxView BackgroundColor="Black" Opacity="0.1" />
+
+                <Grid Padding="20" ColumnDefinitions="*,Auto" VerticalOptions="Center">
+                    <Label Text="WypożyczApka"
+                           FontSize="32"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           FontFamily="cursive" />
+                    <!-- Możesz dodać własną czcionkę -->
+                    <Image Source="logo_placeholder.png"
+                           HeightRequest="60"
+                           WidthRequest="60"
+                           Margin="0,0,10,0"
+                           VerticalOptions="Center"
+                           Grid.Column="1"/>
+                </Grid>
+            </Grid>
+
+            <!-- Zaokrąglona sekcja rejestracji -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="30"
+                   HasShadow="False"
+                   Padding="30"
+                   Margin="0,-30,0,0">
+
+                <VerticalStackLayout Spacing="20">
+
+                    <Label Text="Rejestracja"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+
+                    <!-- Imię i nazwisko -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Image Source="user_icon.png" HeightRequest="20" WidthRequest="20"/>
+                        <Entry Placeholder="Imię i nazwisko" />
+                    </HorizontalStackLayout>
+
+                    <!-- Email -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Image Source="email_icon.png" HeightRequest="20" WidthRequest="20"/>
+                        <Entry Placeholder="Email" Keyboard="Email" />
+                    </HorizontalStackLayout>
+
+                    <!-- Hasło -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Image Source="lock_icon.png" HeightRequest="20" WidthRequest="20"/>
+                        <Entry Placeholder="Hasło" IsPassword="True" />
+                    </HorizontalStackLayout>
+
+                    <!-- Powtórz hasło -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Image Source="lock_icon.png" HeightRequest="20" WidthRequest="20"/>
+                        <Entry Placeholder="Powtórz hasło" IsPassword="True" />
+                    </HorizontalStackLayout>
+
+                    <!-- Przycisk rejestracji -->
+                    <Button Text="Zarejestruj się"
+                            BackgroundColor="#EDE6D6"
+                            TextColor="Black"
+                            CornerRadius="10"
+                            FontAttributes="Bold" />
+
+                    <!-- Link do logowania -->
+                    <Label HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Masz już konto? " />
+                                <Span Text="Zaloguj się"
+                                      TextColor="Blue"
+                                      TextDecorations="Underline"/>
+                                     <!-- GestureRecognizers="{StaticResource LoginTapGesture}" --> 
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
