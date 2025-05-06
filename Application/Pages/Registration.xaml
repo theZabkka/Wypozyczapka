@@ -8,8 +8,8 @@
              Title="Rejestracja">
 
     <Grid>
-    
-    <Image Source="tlo.png"
+
+        <Image Source="tlo.png"
        Aspect="AspectFill"
        Opacity="0.5"
        ZIndex="0" />
@@ -32,14 +32,14 @@
             <VerticalStackLayout Padding="30" Spacing="40" Margin="0"
                         
                          HorizontalOptions="Center">
-                
-               
+
+
                 <Label Text="Logowanie"
                        
                        TextColor="Black"
                        FontSize="25"
                        HorizontalOptions="Center">
-                    
+
                 </Label>
                 <Border 
                 BackgroundColor="White">
@@ -49,36 +49,40 @@
                     <Entry Placeholder="Email"
                    BackgroundColor="Transparent"        
                    HeightRequest="50"
+                   x:Name="EmailEntryField"
                    WidthRequest="220"
                    Margin="3"
                    TextColor="Black"/>
-            </Border>
+                </Border>
 
-            <Border
+                <Border
                 BackgroundColor="White">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="20" />
                     </Border.StrokeShape>
                     <Entry Placeholder="Hasło"
                    IsPassword="True"
+                   x:Name="PasswordEntryField"
                    BackgroundColor="white"
                    HeightRequest="50"
                               Margin="3"
                    TextColor="Black"/>
-            </Border>
+                </Border>
 
-            <Button Text="Zaloguj się"
+                <Button Text="Zaloguj się"
                 BackgroundColor="#c0aea2"    
                 TextColor="White"
                 CornerRadius="10"
+                x:Name="LoginButton"
+                Clicked="LoginButton_Clicked"
                 Margin="10,30,10,10"
                 HeightRequest="50"/>
 
-            <Label Text="Zresetuj hasło"
+                <Label Text="Zresetuj hasło"
                TextColor="Blue"
                TextDecorations="Underline"
                HorizontalOptions="Center"/>
-        </VerticalStackLayout>
+            </VerticalStackLayout>
         </Border>
     </Grid>
 </ContentPage>
