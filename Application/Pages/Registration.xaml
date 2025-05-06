@@ -20,21 +20,22 @@
            WidthRequest="200"
            HorizontalOptions="Center"
            VerticalOptions="Start"
-           Margin="0,30,0,0"
-           ZIndex="2" />
+           Margin="0,-20,0,0"
+           ZIndex="1" />
 
 
 
-        <Border BackgroundColor="white" Margin="30,220,30,180">
+        <Border BackgroundColor="white" Margin="30,220,30,180" HeightRequest="500">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="20" />
             </Border.StrokeShape>
-            <VerticalStackLayout Padding="30" Spacing="20" Margin="0"
-                         VerticalOptions="Center"
+            <VerticalStackLayout Padding="30" Spacing="40" Margin="0"
+                        
                          HorizontalOptions="Center">
                 
                
                 <Label Text="Logowanie"
+                       
                        TextColor="Black"
                        FontSize="25"
                        HorizontalOptions="Center">
@@ -67,15 +68,16 @@
             </Border>
 
             <Button Text="Zaloguj się"
-                BackgroundColor="DarkOliveGreen"    
+                BackgroundColor="#c0aea2"    
                 TextColor="White"
                 CornerRadius="10"
+                Margin="10,30,10,10"
                 HeightRequest="50"/>
 
             <Label Text="Zresetuj hasło"
                TextColor="Blue"
                TextDecorations="Underline"
-               HorizontalOptions="End"/>
+               HorizontalOptions="Center"/>
         </VerticalStackLayout>
         </Border>
     </Grid>
