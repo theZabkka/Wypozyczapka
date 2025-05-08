@@ -15,12 +15,12 @@
        ZIndex="0" />
 
 
-        <Image Source="logo.png"
-           HeightRequest="200"
-           WidthRequest="200"
+        <Image Source="aaa.png"
+           HeightRequest="160"
+           WidthRequest="160"
            HorizontalOptions="Center"
            VerticalOptions="Start"
-           Margin="0,-20,0,0"
+           Margin="0,0,0,0"
            ZIndex="1" />
 
 
