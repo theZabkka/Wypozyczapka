@@ -81,6 +81,10 @@
               "version": "[9.0.4, )",
               "autoReferenced": true
             },
+            "SQLitePCLRaw.bundle_e_sqlite3": {
+              "target": "Package",
+              "version": "[2.1.11, )"
+            },
             "SQLitePCLRaw.core": {
               "target": "Package",
               "version": "[2.1.11, )"
@@ -127,6 +131,10 @@
               "target": "Package",
               "version": "[9.0.4, )",
               "autoReferenced": true
+            },
+            "SQLitePCLRaw.bundle_e_sqlite3": {
+              "target": "Package",
+              "version": "[2.1.11, )"
             },
             "SQLitePCLRaw.core": {
               "target": "Package",
@@ -175,6 +183,10 @@
               "version": "[9.0.4, )",
               "autoReferenced": true
             },
+            "SQLitePCLRaw.bundle_e_sqlite3": {
+              "target": "Package",
+              "version": "[2.1.11, )"
+            },
             "SQLitePCLRaw.core": {
               "target": "Package",
               "version": "[2.1.11, )"
@@ -216,6 +228,10 @@
             "Microsoft.Maui.Controls": {
               "target": "Package",
               "version": "[9.0.14, )"
+            },
+            "SQLitePCLRaw.bundle_e_sqlite3": {
+              "target": "Package",
+              "version": "[2.1.11, )"
             },
             "SQLitePCLRaw.core": {
               "target": "Package",

@@ -15,14 +15,22 @@ namespace Application.DataBase
         public LocalDBService()
         {
             _connection = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, DB_NAME));
-            _connection.CreateTableAsync<Student>();
-
         }
+        public async Task InitializeDatabaseAsync()
+        {
+            await _connection.CreateTableAsync<Student>();
+        }
+
         public async Task<Student> AuthenticateUserAsync(String email, String password)
         {
             return await _connection.Table<Student>()
                 .Where(c => c.Email == email && c.Password == password)
                 .FirstOrDefaultAsync();
         }
+        public async Task AddStudentAsync(Student student)
+        {
+            await _connection.InsertAsync(student);
+        }
+
     }
 }

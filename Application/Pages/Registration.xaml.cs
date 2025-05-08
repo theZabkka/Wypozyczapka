@@ -3,7 +3,7 @@ using SQLite;
 
 namespace Application.Views;
 
-public partial class Registration : ContentPage
+public partial class Registration : ContentPage 
 {
     private readonly SQLiteAsyncConnection _connection;
     private readonly LocalDBService _DbService;
@@ -11,21 +11,28 @@ public partial class Registration : ContentPage
     public Registration()
 	{
 		InitializeComponent();
-        _connection = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "local_db.db3"));
         _authService = new AuthService();
         _DbService = new LocalDBService();
+        _ = AddSampleDataAsync();
+        _DbService.InitializeDatabaseAsync();
+
     }
     public async Task AddSampleDataAsync()
     {
-        
-        string email = EmailEntryField.Text?.Trim();
-        string password = PasswordEntryField.Text?.Trim();
-        await _connection.InsertAsync(new Student
+        try
         {
-            Email = "kakaNaKlate@gmail.com",
-            Password = "mamusiaPiotrka",
-            Name = "Miko³aj"
-        });
+            var student = new Student
+            {
+                Email = "kakaNaKlate@gmail.com",
+                Password = "mamusiaPiotrka",
+                Name = "Miko³aj"
+            };
+            await _DbService.AddStudentAsync(student);
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("SQLite ERROR", ex.ToString(), "OK");
+        }
     }
 
     private async void LoginButton_Clicked(object sender, EventArgs e)
