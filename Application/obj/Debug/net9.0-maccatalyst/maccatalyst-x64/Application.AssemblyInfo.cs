@@ -14,11 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+18fe98665419295a6a6df9818983f7d823bf4f15")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e869cdf273da16eb6cd9a89dd0c0358cacc23265")]
 [assembly: System.Reflection.AssemblyProductAttribute("Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("MacCatalyst18.1")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("MacCatalyst18.2")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("MacCatalyst15.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.

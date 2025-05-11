@@ -1,4 +1,5 @@
 namespace Application.Pages;
+using Application.Models;
 using System.Collections.ObjectModel;
 
 public partial class HomePage : ContentPage
@@ -16,7 +17,7 @@ public partial class HomePage : ContentPage
     {
         for (int i = 1; i <= 15; i++)
         {
-            newsItems.Add(new NewsItem
+            newsItems.Add(new NewsItem  
             {
                 Title = $"Wydarzenie #{i}",
                 Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
