@@ -23,105 +23,105 @@ public partial class HomePage : ContentPage
         Id = Guid.NewGuid(),
         Title = "Dzień Sportu",
         Description = "Zapraszamy wszystkich uczniów na coroczny Dzień Sportu! Zawody rozpoczynają się o 9:00 na boisku.",
-        ImageSource = "obraz1.png"
+        ImageSource = "dziensportu.jpg"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Konkurs Matematyczny",
         Description = "Sprawdź swoje umiejętności w konkursie matematycznym. Nagrody czekają na najlepszych!",
-        ImageSource = "obraz2.png"
+        ImageSource = "sprzatanie.jpg"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Wycieczka do Torunia",
         Description = "Zapisy na wycieczkę szkolną do Torunia trwają do piątku. Liczba miejsc ograniczona!",
-        ImageSource = "obraz3.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Dzień Bez Plecaka",
         Description = "Już w środę Dzień Bez Plecaka! Przynieś książki w nietypowy sposób i zgarnij nagrodę za kreatywność.",
-        ImageSource = "obraz4.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Kiermasz Książek",
         Description = "W szkolnej bibliotece odbędzie się kiermasz używanych książek. Przynieś swoje i znajdź nowe lektury.",
-        ImageSource = "obraz5.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Warsztaty z Programowania",
         Description = "Zajęcia dla początkujących z podstaw C#. Zapisy w sali 204 do środy.",
-        ImageSource = "obraz6.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Spotkanie z Absolwentem",
         Description = "Gościem będzie nasz były uczeń, obecnie pracujący w Google. Opowie o swojej drodze kariery.",
-        ImageSource = "obraz7.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Szkolny Festiwal Talentów",
         Description = "Zgłoś swój występ i pokaż, co potrafisz! Rejestracja do piątku u pedagoga.",
-        ImageSource = "obraz8.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Akcja 'Sprzątanie Świata'",
         Description = "Wspólnie zadbajmy o otoczenie szkoły. Uczestnicy otrzymają punkty z zachowania.",
-        ImageSource = "obraz9.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Tydzień Języków Obcych",
         Description = "Codziennie konkursy i gry w różnych językach. Sprawdź plan na tablicy ogłoszeń.",
-        ImageSource = "obraz10.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Pokaz Eksperymentów Chemicznych",
         Description = "Zobacz efektowne doświadczenia prowadzone przez klasę 3C. Sala chemiczna, czwartek 13:00.",
-        ImageSource = "obraz11.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Dyskoteka Szkolna",
         Description = "Wieczór taneczny dla klas 7–8. Obowiązuje strój galowy i zgoda rodziców.",
-        ImageSource = "obraz12.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Zbiórka Charytatywna",
         Description = "Zbieramy przybory szkolne dla dzieci z Ukrainy. Przynieś rzeczy do sali 101.",
-        ImageSource = "obraz13.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Szkolny Przegląd Filmowy",
         Description = "Projekcje filmów edukacyjnych i klasyków kina. Harmonogram dostępny w bibliotece.",
-        ImageSource = "obraz14.png"
+        ImageSource = "news.png"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Turniej Szachowy",
         Description = "Zgłoś się do rywalizacji o tytuł mistrza szkoły w szachach. Eliminacje w czwartek.",
-        ImageSource = "obraz15.png"
+        ImageSource = "news.png"
     }
 };
         foreach (var wydarzenie in wydarzenia)

@@ -47,96 +47,116 @@
             </Grid>
         </Border>
 
-        <VerticalStackLayout Margin="20,90,20,0" Spacing="15" ZIndex="3">
+        <!-- Sekcja treści -->
+        <VerticalStackLayout Margin="20,90,20,20" Spacing="15" ZIndex="3">
 
             <!-- Baner: Wypożyczaj -->
-            <Border BackgroundColor="#FFEFD5"
-            StrokeThickness="0"
-            HeightRequest="70"
-            Padding="15"
-            StrokeShape="RoundRectangle 20"
-            ZIndex="3">
+            <Border BackgroundColor="Transparent"
+                    StrokeThickness="1"
+                    Stroke="Gray"
+                    HeightRequest="70"
+                    Padding="15"
+                    StrokeShape="RoundRectangle 20">
                 <Border.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnWypozyczTapped"/>
                 </Border.GestureRecognizers>
+                <Border.Background>
+                    <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
+                        <GradientStop Color="#a18470" Offset="0.0" />
+                        <GradientStop Color="#c0aea2" Offset="1.0" />
+                    </RadialGradientBrush>
+                </Border.Background>
+                <Border.Shadow>
+                    <Shadow Brush="Black" Opacity="0.4" Offset="0,3" Radius="15" />
+                </Border.Shadow>
                 <Grid ColumnDefinitions="Auto,*"
-              VerticalOptions="Center">
+                      VerticalOptions="Center">
                     <Image Source="wypozycz.png"
-                   WidthRequest="30"
-                   HeightRequest="30"
-                   VerticalOptions="Center"/>
-                    <Label Text="Wypożyczaj"
-                   FontSize="20"
-                   FontAttributes="Bold"
-                   TextColor="#4A4A4A"
-                   VerticalOptions="Center"
-                   Margin="15,0,0,0"
-                   Grid.Column="1"/>
+                           WidthRequest="30"
+                           HeightRequest="30"
+                           VerticalOptions="Center"/>
+                    <Label Text="Wypożycz"
+                           FontSize="20"
+                           HorizontalOptions="Start"
+                           FontAttributes="Bold"
+                           TextColor="#4A4A4A"
+                           VerticalOptions="Center"
+                           Margin="15,0,0,0"
+                           Grid.Column="1"/>
                 </Grid>
             </Border>
 
-            <!-- Baner: Aktualności -->
-            <Border BackgroundColor="#E0FFFF"
-            StrokeThickness="0"
-            HeightRequest="60"
-            Padding="15"
-            StrokeShape="RoundRectangle 20"
-            ZIndex="3">
-                <Grid ColumnDefinitions="Auto,*"
-              VerticalOptions="Center">
-                    <Image Source="news.png"
-                   WidthRequest="25"
-                   HeightRequest="25"
-                   VerticalOptions="Center"/>
-                    <Label Text="Aktualności"
-                   FontSize="18"
-                   FontAttributes="Bold"
-                   TextColor="#2F4F4F"
-                   VerticalOptions="Center"
-                   Margin="10,0,0,0"
-                   Grid.Column="1"/>
-                </Grid>
+            <!-- Baner + lista aktualności w jednej ramce -->
+            <Border BackgroundColor="White"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 20"
+                    Stroke="Black"
+                    Padding="15"
+                    ZIndex="2">
+              
+                    <VerticalStackLayout Spacing="10" VerticalOptions="FillAndExpand">
+
+                    <!-- Baner: Aktualności -->
+                    <Grid ColumnDefinitions="Auto,*"
+                          VerticalOptions="Center">
+                        <Image Source="news.png"
+                               WidthRequest="30"
+                               HeightRequest="30"
+                               VerticalOptions="Center"/>
+                        <Label Text="Aktualności"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="#2F4F4F"
+                               VerticalOptions="Center"
+                               Margin="10,0,0,0"
+                               Grid.Column="1"/>
+                    </Grid>
+                    <Border></Border>
+                    <!-- Lista aktualności (scrollowalna) -->
+                    <CollectionView ItemsLayout="VerticalList"
+                                    x:Name="NewsCollectionView"
+                                    VerticalOptions="Fill"
+                                    HeightRequest="500"
+                                    HorizontalOptions="Fill"
+                                    
+                                    >
+                        <!-- Dostosuj wysokość, jeśli trzeba -->
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Border StrokeThickness="0"
+                                        BackgroundColor="#F9F9F9"
+                                        StrokeShape="RoundRectangle 20"
+                                        Margin="0,10"
+                                        Padding="10">
+                                    <Grid RowDefinitions="Auto,Auto"
+                                          ColumnDefinitions="Auto,*">
+                                        <Image Source="{Binding ImageSource}"
+                                               WidthRequest="100"
+                                               HeightRequest="100"
+                                               Margin="0,0,10,0"
+                                               Aspect="AspectFill"
+                                               Grid.RowSpan="2"/>
+                                        <Label Text="{Binding Title}"
+                                               FontSize="18"
+                                               FontAttributes="Bold"
+                                               TextColor="#333"
+                                               Margin="0,0,0,5"
+                                               Grid.Column="1"/>
+                                        <Label Text="{Binding Description}"
+                                               FontSize="14"
+                                               TextColor="#555"
+                                               Grid.Column="1"
+                                               Grid.Row="1"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </VerticalStackLayout>
             </Border>
 
         </VerticalStackLayout>
-
-        <!-- Lista kafelków z aktualnościami -->
-        <CollectionView ItemsLayout="VerticalList"
-                        Margin="20,230,20,20"
-                        x:Name="NewsCollectionView"
-                        ZIndex="2">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame CornerRadius="20"
-                           HasShadow="True"
-                           Margin="0,10"
-                           Padding="0"
-                           BackgroundColor="White">
-                        <Grid RowDefinitions="Auto,Auto"
-                              ColumnDefinitions="Auto,*">
-                            <Image Source="{Binding ImageSource}"
-                                   WidthRequest="100"
-                                   HeightRequest="100"
-                                   Margin="10"
-                                   Aspect="AspectFill"
-                                   Grid.RowSpan="2"/>
-                            <Label Text="{Binding Title}"
-                                   FontSize="18"
-                                   FontAttributes="Bold"
-                                   TextColor="#333"
-                                   Margin="10,10,10,0"
-                                   Grid.Column="1"/>
-                            <Label Text="{Binding Description}"
-                                   FontSize="14"
-                                   TextColor="#555"
-                                   Margin="10,0,10,10"
-                                   Grid.Column="1"
-                                   Grid.Row="1"/>
-                        </Grid>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
 
     </Grid>
 </ContentPage>
