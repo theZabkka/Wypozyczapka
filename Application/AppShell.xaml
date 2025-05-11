@@ -16,6 +16,9 @@
     Title="Strona główna"
     Route="HomePage"
     ContentTemplate="{DataTemplate local:Pages.HomePage }"
-    Shell.TabBarIsVisible="False"/>
+    Shell.TabBarIsVisible="True"/>
+
+    <ShellContent Title="Wypożyczenia" ContentTemplate="{DataTemplate local:Pages.Rent}" Route="Wypozyczenia" />
+
 
 </Shell>

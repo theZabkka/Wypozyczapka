@@ -13,26 +13,96 @@
                Opacity="0.2"
                ZIndex="0" />
 
-        <!-- Pasek tytułowy -->
+        <!-- Pasek tytułowy z hamburgerem i tytułem -->
         <Border BackgroundColor="White"
-                HeightRequest="80"
+                HeightRequest="60"
                 VerticalOptions="Start"
                 HorizontalOptions="Fill"
                 ZIndex="1">
             <Border.StrokeShape>
-                <RoundRectangle CornerRadius="0,0,20,20" />
+                <RoundRectangle CornerRadius="0,0,0,0" />
             </Border.StrokeShape>
-            <Label Text="WypożyczApka"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   FontSize="28"
-                   FontAttributes="Bold"
-                   TextColor="#4A4A4A"/>
+
+            <Grid>
+
+                <!-- Hamburger -->
+                <ImageButton Source="flyoutmenuicon.png"
+                             WidthRequest="32"
+                             HeightRequest="32"
+                             BackgroundColor="Transparent"
+                             Clicked="OnMenuClicked"
+                             HorizontalOptions="Start"
+                             VerticalOptions="Center"
+                             ZIndex="1"
+                             Margin="5,0"/>
+
+                <!-- Tytuł -->
+                <Label Text="WypożyczApka"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       ZIndex="2"/>
+            </Grid>
         </Border>
+
+        <VerticalStackLayout Margin="20,90,20,0" Spacing="15" ZIndex="3">
+
+            <!-- Baner: Wypożyczaj -->
+            <Border BackgroundColor="#FFEFD5"
+            StrokeThickness="0"
+            HeightRequest="70"
+            Padding="15"
+            StrokeShape="RoundRectangle 20"
+            ZIndex="3">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnWypozyczTapped"/>
+                </Border.GestureRecognizers>
+                <Grid ColumnDefinitions="Auto,*"
+              VerticalOptions="Center">
+                    <Image Source="wypozycz.png"
+                   WidthRequest="30"
+                   HeightRequest="30"
+                   VerticalOptions="Center"/>
+                    <Label Text="Wypożyczaj"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#4A4A4A"
+                   VerticalOptions="Center"
+                   Margin="15,0,0,0"
+                   Grid.Column="1"/>
+                </Grid>
+            </Border>
+
+            <!-- Baner: Aktualności -->
+            <Border BackgroundColor="#E0FFFF"
+            StrokeThickness="0"
+            HeightRequest="60"
+            Padding="15"
+            StrokeShape="RoundRectangle 20"
+            ZIndex="3">
+                <Grid ColumnDefinitions="Auto,*"
+              VerticalOptions="Center">
+                    <Image Source="news.png"
+                   WidthRequest="25"
+                   HeightRequest="25"
+                   VerticalOptions="Center"/>
+                    <Label Text="Aktualności"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="#2F4F4F"
+                   VerticalOptions="Center"
+                   Margin="10,0,0,0"
+                   Grid.Column="1"/>
+                </Grid>
+            </Border>
+
+        </VerticalStackLayout>
 
         <!-- Lista kafelków z aktualnościami -->
         <CollectionView ItemsLayout="VerticalList"
-                        Margin="20,100,20,20"
+                        Margin="20,230,20,20"
                         x:Name="NewsCollectionView"
                         ZIndex="2">
             <CollectionView.ItemTemplate>
@@ -50,7 +120,6 @@
                                    Margin="10"
                                    Aspect="AspectFill"
                                    Grid.RowSpan="2"/>
-                                   <!--CornerRadius="10"-->
                             <Label Text="{Binding Title}"
                                    FontSize="18"
                                    FontAttributes="Bold"

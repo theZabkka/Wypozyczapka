@@ -48,6 +48,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Application.Pages.Registra
 build_metadata.AdditionalFiles.TargetPath = Pages\Registration.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Registration.xaml
 
+[C:/Users/radzi/source/repos/Wypozyczapka/Application/Pages/Rent.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Application.Pages.Rent.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Rent.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Rent.xaml
+
 [C:/Users/radzi/source/repos/Wypozyczapka/Application/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.Resources.Styles.Colors.xaml

@@ -4,33 +4,155 @@ using System.Collections.ObjectModel;
 
 public partial class HomePage : ContentPage
 {
-    private ObservableCollection<NewsItem> newsItems = new();
+    private ObservableCollection<NewsItem> visibleItems = new();
+    private HashSet<NewsItem> allUniqueItems = new();
 
     public HomePage()
     {
         InitializeComponent();
         LoadNews();
-        NewsCollectionView.ItemsSource = newsItems;
+        NewsCollectionView.ItemsSource = visibleItems;
     }
 
     private void LoadNews()
     {
-        for (int i = 1; i <= 15; i++)
+        var wydarzenia = new List<NewsItem>
+    {
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Dzień Sportu",
+        Description = "Zapraszamy wszystkich uczniów na coroczny Dzień Sportu! Zawody rozpoczynają się o 9:00 na boisku.",
+        ImageSource = "obraz1.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Konkurs Matematyczny",
+        Description = "Sprawdź swoje umiejętności w konkursie matematycznym. Nagrody czekają na najlepszych!",
+        ImageSource = "obraz2.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Wycieczka do Torunia",
+        Description = "Zapisy na wycieczkę szkolną do Torunia trwają do piątku. Liczba miejsc ograniczona!",
+        ImageSource = "obraz3.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Dzień Bez Plecaka",
+        Description = "Już w środę Dzień Bez Plecaka! Przynieś książki w nietypowy sposób i zgarnij nagrodę za kreatywność.",
+        ImageSource = "obraz4.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Kiermasz Książek",
+        Description = "W szkolnej bibliotece odbędzie się kiermasz używanych książek. Przynieś swoje i znajdź nowe lektury.",
+        ImageSource = "obraz5.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Warsztaty z Programowania",
+        Description = "Zajęcia dla początkujących z podstaw C#. Zapisy w sali 204 do środy.",
+        ImageSource = "obraz6.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Spotkanie z Absolwentem",
+        Description = "Gościem będzie nasz były uczeń, obecnie pracujący w Google. Opowie o swojej drodze kariery.",
+        ImageSource = "obraz7.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Szkolny Festiwal Talentów",
+        Description = "Zgłoś swój występ i pokaż, co potrafisz! Rejestracja do piątku u pedagoga.",
+        ImageSource = "obraz8.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Akcja 'Sprzątanie Świata'",
+        Description = "Wspólnie zadbajmy o otoczenie szkoły. Uczestnicy otrzymają punkty z zachowania.",
+        ImageSource = "obraz9.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Tydzień Języków Obcych",
+        Description = "Codziennie konkursy i gry w różnych językach. Sprawdź plan na tablicy ogłoszeń.",
+        ImageSource = "obraz10.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Pokaz Eksperymentów Chemicznych",
+        Description = "Zobacz efektowne doświadczenia prowadzone przez klasę 3C. Sala chemiczna, czwartek 13:00.",
+        ImageSource = "obraz11.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Dyskoteka Szkolna",
+        Description = "Wieczór taneczny dla klas 7–8. Obowiązuje strój galowy i zgoda rodziców.",
+        ImageSource = "obraz12.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Zbiórka Charytatywna",
+        Description = "Zbieramy przybory szkolne dla dzieci z Ukrainy. Przynieś rzeczy do sali 101.",
+        ImageSource = "obraz13.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Szkolny Przegląd Filmowy",
+        Description = "Projekcje filmów edukacyjnych i klasyków kina. Harmonogram dostępny w bibliotece.",
+        ImageSource = "obraz14.png"
+    },
+    new NewsItem
+    {
+        Id = Guid.NewGuid(),
+        Title = "Turniej Szachowy",
+        Description = "Zgłoś się do rywalizacji o tytuł mistrza szkoły w szachach. Eliminacje w czwartek.",
+        ImageSource = "obraz15.png"
+    }
+};
+        foreach (var wydarzenie in wydarzenia)
         {
-            newsItems.Add(new NewsItem  
-            {
-                Title = $"Wydarzenie #{i}",
-                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                ImageSource = $"obraz{i}.png"
-                //kutas kozła
-            });
+            AddNewsItem(wydarzenie);
         }
     }
 
     public void AddNewsItem(NewsItem item)
     {
-        if (newsItems.Count >= 15)
-            newsItems.RemoveAt(0); // usuń najstarszy
-        newsItems.Add(item);
+        if (!allUniqueItems.Add(item))
+            return; // Już istnieje — nie dodajemy
+
+        if (visibleItems.Count >= 15)
+        {
+            var toRemove = visibleItems[0];
+            visibleItems.RemoveAt(0);
+            allUniqueItems.Remove(toRemove);
+        }
+
+        visibleItems.Add(item);
     }
+    private void OnMenuClicked(object sender, EventArgs e)
+    {
+        Shell.Current.FlyoutIsPresented = true;
+    }
+    private async void OnWypozyczTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//Wypozyczenia"); // lub inną nazwę Twojej strony
+    }
+
+
 }
+
