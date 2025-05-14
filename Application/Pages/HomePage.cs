@@ -30,98 +30,50 @@ public partial class HomePage : ContentPage
         Id = Guid.NewGuid(),
         Title = "Konkurs Matematyczny",
         Description = "Sprawdź swoje umiejętności w konkursie matematycznym. Nagrody czekają na najlepszych!",
-        ImageSource = "sprzatanie.jpg"
+        ImageSource = "konkurs.jpg"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Wycieczka do Torunia",
         Description = "Zapisy na wycieczkę szkolną do Torunia trwają do piątku. Liczba miejsc ograniczona!",
-        ImageSource = "news.png"
+        ImageSource = "torun.jpg"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Dzień Bez Plecaka",
         Description = "Już w środę Dzień Bez Plecaka! Przynieś książki w nietypowy sposób i zgarnij nagrodę za kreatywność.",
-        ImageSource = "news.png"
-    },
-    new NewsItem
-    {
-        Id = Guid.NewGuid(),
-        Title = "Kiermasz Książek",
-        Description = "W szkolnej bibliotece odbędzie się kiermasz używanych książek. Przynieś swoje i znajdź nowe lektury.",
-        ImageSource = "news.png"
+        ImageSource = "dzienbez.jpg"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Warsztaty z Programowania",
         Description = "Zajęcia dla początkujących z podstaw C#. Zapisy w sali 204 do środy.",
-        ImageSource = "news.png"
+        ImageSource = "programowanie.jpg"
     },
-    new NewsItem
-    {
-        Id = Guid.NewGuid(),
-        Title = "Spotkanie z Absolwentem",
-        Description = "Gościem będzie nasz były uczeń, obecnie pracujący w Google. Opowie o swojej drodze kariery.",
-        ImageSource = "news.png"
-    },
+  
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Szkolny Festiwal Talentów",
         Description = "Zgłoś swój występ i pokaż, co potrafisz! Rejestracja do piątku u pedagoga.",
-        ImageSource = "news.png"
+        ImageSource = "mamtalent.jpg"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Akcja 'Sprzątanie Świata'",
         Description = "Wspólnie zadbajmy o otoczenie szkoły. Uczestnicy otrzymają punkty z zachowania.",
-        ImageSource = "news.png"
+        ImageSource = "sprzatanie.jpg"
     },
     new NewsItem
     {
         Id = Guid.NewGuid(),
         Title = "Tydzień Języków Obcych",
         Description = "Codziennie konkursy i gry w różnych językach. Sprawdź plan na tablicy ogłoszeń.",
-        ImageSource = "news.png"
-    },
-    new NewsItem
-    {
-        Id = Guid.NewGuid(),
-        Title = "Pokaz Eksperymentów Chemicznych",
-        Description = "Zobacz efektowne doświadczenia prowadzone przez klasę 3C. Sala chemiczna, czwartek 13:00.",
-        ImageSource = "news.png"
-    },
-    new NewsItem
-    {
-        Id = Guid.NewGuid(),
-        Title = "Dyskoteka Szkolna",
-        Description = "Wieczór taneczny dla klas 7–8. Obowiązuje strój galowy i zgoda rodziców.",
-        ImageSource = "news.png"
-    },
-    new NewsItem
-    {
-        Id = Guid.NewGuid(),
-        Title = "Zbiórka Charytatywna",
-        Description = "Zbieramy przybory szkolne dla dzieci z Ukrainy. Przynieś rzeczy do sali 101.",
-        ImageSource = "news.png"
-    },
-    new NewsItem
-    {
-        Id = Guid.NewGuid(),
-        Title = "Szkolny Przegląd Filmowy",
-        Description = "Projekcje filmów edukacyjnych i klasyków kina. Harmonogram dostępny w bibliotece.",
-        ImageSource = "news.png"
-    },
-    new NewsItem
-    {
-        Id = Guid.NewGuid(),
-        Title = "Turniej Szachowy",
-        Description = "Zgłoś się do rywalizacji o tytuł mistrza szkoły w szachach. Eliminacje w czwartek.",
-        ImageSource = "news.png"
+        ImageSource = "tydzien.jpg"
     }
 };
         foreach (var wydarzenie in wydarzenia)

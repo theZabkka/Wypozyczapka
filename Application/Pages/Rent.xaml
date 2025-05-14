@@ -2,11 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Application.Pages.Rent"
-             Title="Rent">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             BackgroundColor="#F8F8FF"
+             Title="Wypożycz"
+             >
+    
+        <Image Source="tlo.png"
+            Aspect="AspectFill"
+            Opacity="0.2"
+            ZIndex="0" />
+    
 </ContentPage>
