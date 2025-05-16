@@ -1,4 +1,5 @@
 using Application.DataBase;
+using Application.Models;
 using SQLite;
 
 namespace Application.Views;
@@ -45,7 +46,6 @@ public partial class Registration : ContentPage
         }
     }
 
-    // Obs³uga przycisku logowania
     private async void LoginButton_Clicked(object sender, EventArgs e)
     {
         string email = EmailEntryField.Text?.Trim();

@@ -2,13 +2,70 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Application.Pages.Rent"
-             BackgroundColor="#F8F8FF"
              Title="Wypożycz"
-             >
-    
-        <Image Source="tlo.png"
-            Aspect="AspectFill"
-            Opacity="0.2"
-            ZIndex="0" />
-    
+             BackgroundColor="white">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
+
+            <!-- Pasek menu (tu placeholder — zakładam, że AppShell go ma) -->
+
+            <!-- Tytuł -->
+            <Label Text="WypożyczApka"
+               FontSize="32"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+            <!-- Kafle kategorii -->
+            <VerticalStackLayout Spacing="25" HorizontalOptions="Center">
+
+                <!-- Książki -->
+                <Frame CornerRadius="20" Padding="0" HasShadow="True" WidthRequest="300" HeightRequest="180" BackgroundColor="#EDE6D6">
+                    <Grid>
+                        <Image Source="book_placeholder.jpg"
+                           Aspect="AspectFill"
+                           Opacity="0.3" />
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                            <Image Source="icon_book.png" WidthRequest="48" HeightRequest="48"/>
+                            <Label Text="Książki" FontSize="22" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Button BackgroundColor="Transparent"
+                            Command="{Binding GoToBooksCommand}" />
+                    </Grid>
+                </Frame>
+
+                <!-- Sportowe -->
+                <Frame CornerRadius="20" Padding="0" HasShadow="True" WidthRequest="300" HeightRequest="180" BackgroundColor="#EDE6D6">
+                    <Grid>
+                        <Image Source="sport_placeholder.jpg"
+                           Aspect="AspectFill"
+                           Opacity="0.3" />
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                            <Image Source="icon_sport.png" WidthRequest="48" HeightRequest="48"/>
+                            <Label Text="Sprzęt sportowy" FontSize="22" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Button BackgroundColor="Transparent"
+                            Command="{Binding GoToSportCommand}" />
+                    </Grid>
+                </Frame>
+
+                <!-- Przybory -->
+                <Frame CornerRadius="20" Padding="0" HasShadow="True" WidthRequest="300" HeightRequest="180" BackgroundColor="#EDE6D6">
+                    <Grid>
+                        <Image Source="supply_placeholder.jpg"
+                           Aspect="AspectFill"
+                           Opacity="0.3" />
+                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                            <Image Source="icon_supply.png" WidthRequest="48" HeightRequest="48"/>
+                            <Label Text="Przybory" FontSize="22" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Button BackgroundColor="Transparent"
+                            Command="{Binding GoToSupplyCommand}" />
+                    </Grid>
+                </Frame>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

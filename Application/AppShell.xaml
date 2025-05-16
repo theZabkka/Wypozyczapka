@@ -10,15 +10,17 @@
     <ShellContent
         Title="Rejestracja"
         Route="RegistrationPage"
-        ContentTemplate="{DataTemplate local:Views.Registration }"
-        Shell.TabBarIsVisible="False"/>
+        ContentTemplate="{DataTemplate local:Views.Registration}"
+        Shell.TabBarIsVisible="False" />
+
     <ShellContent
-    Title="Strona główna"
-    Route="HomePage"
-    ContentTemplate="{DataTemplate local:Pages.HomePage }"
-    Shell.TabBarIsVisible="True"/>
+        Title="Strona główna"
+        Route="HomePage"
+        ContentTemplate="{DataTemplate local:Pages.HomePage}"
+        Shell.TabBarIsVisible="True" />
 
-    <ShellContent Title="Wypożyczenia" ContentTemplate="{DataTemplate local:Pages.Rent}" Route="Wypozyczenia" />
-
-
+    <ShellContent
+        Title="Wypożyczenia"
+        Route="Wypozyczenia"
+        ContentTemplate="{DataTemplate local:Pages.Rent}" />
 </Shell>

@@ -3,6 +3,11 @@ build_property.EnableAotAnalyzer =
 build_property.EnableSingleFileAnalyzer = true
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property._MvvmToolkitIsUsingWindowsRuntimePack = false
+build_property.CsWinRTComponent = 
+build_property.CsWinRTAotOptimizerEnabled = 
+build_property.CsWinRTAotWarningLevel = 
 build_property.TargetFramework = net9.0-android
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -12,55 +17,73 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Application
-build_property.ProjectDir = C:\Users\patry\Desktop\Wypozyczapkaa\Application\
+build_property.ProjectDir = C:\Users\thezabkadev\Source\Repos\Wypozyczapka\Application\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/patry/Desktop/Wypozyczapkaa/Application/App.xaml]
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/patry/Desktop/Wypozyczapkaa/Application/AppShell.xaml]
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/patry/Desktop/Wypozyczapkaa/Application/MainPage.xaml]
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/patry/Desktop/Wypozyczapkaa/Application/Pages/HomePage.xaml]
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/Pages/HomePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.Pages.HomePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\HomePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\HomePage.xaml
 
-[C:/Users/patry/Desktop/Wypozyczapkaa/Application/Pages/Registration.xaml]
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/Pages/Registration.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.Pages.Registration.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Registration.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Registration.xaml
 
-[C:/Users/patry/Desktop/Wypozyczapkaa/Application/Pages/Rent.xaml]
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/Pages/Rent.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.Pages.Rent.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Rent.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Rent.xaml
 
-[C:/Users/patry/Desktop/Wypozyczapkaa/Application/Resources/Styles/Colors.xaml]
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/Pages/RentBook.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Application.Pages.RentBook.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\RentBook.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\RentBook.xaml
+
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/Pages/RentSportItem.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Application.Pages.RentSportItem.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\RentSportItem.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\RentSportItem.xaml
+
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/Pages/RentSupply.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Application.Pages.RentSupply.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\RentSupply.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\RentSupply.xaml
+
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/patry/Desktop/Wypozyczapkaa/Application/Resources/Styles/Styles.xaml]
+[C:/Users/thezabkadev/Source/Repos/Wypozyczapka/Application/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Application.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

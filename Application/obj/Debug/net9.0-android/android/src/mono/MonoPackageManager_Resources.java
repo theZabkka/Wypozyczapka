@@ -3,7 +3,12 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "Application.dll" comes first in this list. */
 		"Application.dll",
+		"CommonServiceLocator.dll",
+		"CommunityToolkit.Mvvm.dll",
 		"GoogleGson.dll",
+		"Microsoft.CodeAnalysis.dll",
+		"Microsoft.CodeAnalysis.CSharp.dll",
+		"Microsoft.CodeAnalysis.VisualBasic.dll",
 		"Microsoft.Extensions.Configuration.dll",
 		"Microsoft.Extensions.Configuration.Abstractions.dll",
 		"Microsoft.Extensions.DependencyInjection.dll",
@@ -18,6 +23,10 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Maui.dll",
 		"Microsoft.Maui.Essentials.dll",
 		"Microsoft.Maui.Graphics.dll",
+		"Microsoft.VisualBasic.dll",
+		"GalaSoft.MvvmLight.Extras.dll",
+		"GalaSoft.MvvmLight.Platform.dll",
+		"GalaSoft.MvvmLight.dll",
 		"SQLite-net.dll",
 		"SQLitePCLRaw.batteries_v2.dll",
 		"SQLitePCLRaw.core.dll",
@@ -106,7 +115,6 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Google.Guava.ListenableFuture.dll",
 		"Xamarin.Jetbrains.Annotations.dll",
 		"Xamarin.Kotlin.StdLib.dll",
-		"Xamarin.Kotlin.StdLib.Common.dll",
 		"Xamarin.KotlinX.AtomicFU.dll",
 		"Xamarin.KotlinX.AtomicFU.Jvm.dll",
 		"Xamarin.KotlinX.Coroutines.Android.dll",
@@ -151,6 +159,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Maui.Controls.HotReload.Forms.dll",
 		"Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll",
 		"Microsoft.VisualStudio.DesignTools.TapContract.dll",
+		"Microsoft.VisualStudio.DesignTools.XamlTapContract.dll",
 		"_Microsoft.Android.Resource.Designer.dll",
 	};
 	public static String[] Dependencies = new String[]{
