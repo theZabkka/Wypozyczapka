@@ -138,66 +138,70 @@ namespace Application.DataBase
 
         public async Task SeedSampleDataAsync()
         {
-            // Dodaj książki, jeśli nie istnieją
+            // Książki
             var books = await _connection.Table<Book>().ToListAsync();
             if (books.Count == 0)
             {
                 var sampleBooks = new List<Book>
-                {
-                    new Book { Title = "Lalka", Author = "Bolesław Prus", IsBorrowed = false },
-                    new Book { Title = "Zbrodnia i kara", Author = "Fiodor Dostojewski", IsBorrowed = false },
-                    new Book { Title = "Pan Tadeusz", Author = "Adam Mickiewicz", IsBorrowed = false },
-                    new Book { Title = "Harry Potter", Author = "J.K. Rowling", IsBorrowed = false },
-                    new Book { Title = "Wiedźmin", Author = "Andrzej Sapkowski", IsBorrowed = false },
-                    new Book { Title = "Mały Książę", Author = "Antoine de Saint-Exupéry", IsBorrowed = false },
-                    new Book { Title = "Hobbit", Author = "J.R.R. Tolkien", IsBorrowed = false },
-                    new Book { Title = "Opowieść wigilijna", Author = "Charles Dickens", IsBorrowed = false },
-                    new Book { Title = "Duma i uprzedzenie", Author = "Jane Austen", IsBorrowed = false },
-                    new Book { Title = "1984", Author = "George Orwell", IsBorrowed = false }
-                };
+        {
+            new Book { Title = "Lalka", Author = "Bolesław Prus", IsBorrowed = false, ImageSource = "book1.jpg" },
+            new Book { Title = "Zbrodnia i kara", Author = "Fiodor Dostojewski", IsBorrowed = false, ImageSource = "book2.jpg" },
+            new Book { Title = "Pan Tadeusz", Author = "Adam Mickiewicz", IsBorrowed = false, ImageSource = "book3.jpg" },
+            new Book { Title = "Harry Potter", Author = "J.K. Rowling", IsBorrowed = false, ImageSource = "book4.jpg" },
+            new Book { Title = "Wiedźmin", Author = "Andrzej Sapkowski", IsBorrowed = false, ImageSource = "book5.jpg" },
+            new Book { Title = "Mały Książę", Author = "Antoine de Saint-Exupéry", IsBorrowed = false, ImageSource = "book6.jpg" },
+            new Book { Title = "Hobbit", Author = "J.R.R. Tolkien", IsBorrowed = false, ImageSource = "book7.jpg" },
+            new Book { Title = "Opowieść wigilijna", Author = "Charles Dickens", IsBorrowed = false, ImageSource = "book8.jpg" },
+            new Book { Title = "Duma i uprzedzenie", Author = "Jane Austen", IsBorrowed = false, ImageSource = "book9.jpg" },
+            new Book { Title = "1984", Author = "George Orwell", IsBorrowed = false, ImageSource = "book10.jpg" }
+        };
                 await _connection.InsertAllAsync(sampleBooks);
-
             }
+
+            // Sprzęt sportowy
             var sports = await _connection.Table<SportItem>().ToListAsync();
             if (sports.Count == 0)
             {
                 var sampleSports = new List<SportItem>
-    {
-                    new SportItem { Name = "Piłka nożna", IsBorrowed = false },
-                    new SportItem { Name = "Piłka koszykowa", IsBorrowed = false },
-                    new SportItem { Name = "Skakanka", IsBorrowed = false },
-                    new SportItem { Name = "Piłka siatkowa", IsBorrowed = false },
-                    new SportItem { Name = "Rakieta tenisowa", IsBorrowed = false },
-                    new SportItem { Name = "Piłeczki pingpongowe", IsBorrowed = false },
-                    new SportItem { Name = "Hula-hop", IsBorrowed = false },
-                    new SportItem { Name = "Kij do unihokeja", IsBorrowed = false },
-                    new SportItem { Name = "Szachy", IsBorrowed = false },
-                    new SportItem { Name = "Zestaw do badmintona", IsBorrowed = false }
-    };
+        {
+            new SportItem { Name = "Piłka nożna", IsBorrowed = false, ImageSource = "sportitem1.jpg" },
+            new SportItem { Name = "Piłka koszykowa", IsBorrowed = false, ImageSource = "sportitem2.jpg" },
+            new SportItem { Name = "Skakanka", IsBorrowed = false, ImageSource = "sportitem3.jpg" },
+            new SportItem { Name = "Piłka siatkowa", IsBorrowed = false, ImageSource = "sportitem4.jpg" },
+            new SportItem { Name = "Rakieta tenisowa", IsBorrowed = false, ImageSource = "sportitem5.jpg" },
+            new SportItem { Name = "Piłeczki pingpongowe", IsBorrowed = false, ImageSource = "sportitem6.jpg" },
+            new SportItem { Name = "Hula-hop", IsBorrowed = false, ImageSource = "sportitem7.jpg" },
+            new SportItem { Name = "Kij do unihokeja", IsBorrowed = false, ImageSource = "sportitem8.jpg" },
+            new SportItem { Name = "Szachy", IsBorrowed = false, ImageSource = "sportitem9.jpg" },
+            new SportItem { Name = "Zestaw do badmintona", IsBorrowed = false, ImageSource = "sportitem10.jpg" }
+        };
                 await _connection.InsertAllAsync(sampleSports);
             }
+
+            // Przybory
             var supplies = await _connection.Table<Supply>().ToListAsync();
             if (supplies.Count == 0)
             {
                 var sampleSupplies = new List<Supply>
-    {
-        new Supply { Name = "Kalkulator", IsBorrowed = false },
-        new Supply { Name = "Linijka", IsBorrowed = false },
-        new Supply { Name = "Cyrkiel", IsBorrowed = false },
-        new Supply { Name = "Ekierka", IsBorrowed = false },
-        new Supply { Name = "Blok techniczny", IsBorrowed = false },
-        new Supply { Name = "Nożyczki", IsBorrowed = false },
-        new Supply { Name = "Taśma klejąca", IsBorrowed = false },
-        new Supply { Name = "Zszywacz", IsBorrowed = false },
-        new Supply { Name = "Dziurkacz", IsBorrowed = false },
-        new Supply { Name = "Marker", IsBorrowed = false }
-    };
+        {
+            new Supply { Name = "Kalkulator", IsBorrowed = false, ImageSource = "supply1.jpg" },
+            new Supply { Name = "Linijka", IsBorrowed = false, ImageSource = "supply2.jpg" },
+            new Supply { Name = "Cyrkiel", IsBorrowed = false, ImageSource = "supply3.jpg" },
+            new Supply { Name = "Ekierka", IsBorrowed = false, ImageSource = "supply4.jpg" },
+            new Supply { Name = "Blok techniczny", IsBorrowed = false, ImageSource = "supply5.jpg" },
+            new Supply { Name = "Nożyczki", IsBorrowed = false, ImageSource = "supply6.jpg" },
+            new Supply { Name = "Taśma klejąca", IsBorrowed = false, ImageSource = "supply7.jpg" },
+            new Supply { Name = "Zszywacz", IsBorrowed = false, ImageSource = "supply8.jpg" },
+            new Supply { Name = "Dziurkacz", IsBorrowed = false, ImageSource = "supply9.jpg" },
+            new Supply { Name = "Marker", IsBorrowed = false, ImageSource = "supply10.jpg" }
+        };
                 await _connection.InsertAllAsync(sampleSupplies);
             }
-
         }
-    
-    public async Task<List<Book>> GetAllBooksAsync()
+
+
+
+        public async Task<List<Book>> GetAllBooksAsync()
         {
             return await _connection.Table<Book>().ToListAsync();
         }
@@ -205,6 +209,24 @@ namespace Application.DataBase
         public async Task UpdateBookAsync(Book book)
         {
             await _connection.UpdateAsync(book);
+        }
+        public async Task<List<SportItem>> GetAllSportItemsAsync()
+        {
+            return await _connection.Table<SportItem>().ToListAsync();
+        }
+
+        public async Task UpdateSportItemAsync(SportItem item)
+        {
+            await _connection.UpdateAsync(item);
+        }
+        public async Task<List<Supply>> GetAllSuppliesAsync()
+        {
+            return await _connection.Table<Supply>().ToListAsync();
+        }
+
+        public async Task UpdateSupplyAsync(Supply supply)
+        {
+            await _connection.UpdateAsync(supply);
         }
     }
 }

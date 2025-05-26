@@ -10,5 +10,7 @@ namespace Application.Models
         public string Name { get; set; }
 
         public bool IsBorrowed { get; set; }
+
+        public string ImageSource { get; set; }
     }
 }

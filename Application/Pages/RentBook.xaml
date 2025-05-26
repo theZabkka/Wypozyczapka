@@ -32,15 +32,18 @@
                                     <Grid ColumnDefinitions="Auto,*"
                                       RowDefinitions="Auto">
                                         <!-- Obraz książki -->
-                                        <Image Grid.Row="0" Grid.Column="0"
-                                           Source="ksionszki.jpg"
+                                    <Image Grid.Row="0" Grid.Column="0"
+                                           Source="{Binding ImageSource}"
                                            HeightRequest="100"
                                            WidthRequest="80"
                                            Aspect="AspectFill"
                                            VerticalOptions="Center"
-                                           Margin="0,0,10,0" />
+                                           Margin="0,0,10,0" >
 
-                                        <!-- Teksty i przycisk -->
+
+                                    </Image>
+
+                                    <!-- Teksty i przycisk -->
                                         <VerticalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
                                             <Label Text="{Binding Title}"
                                                FontAttributes="Bold"
