@@ -9,4 +9,5 @@ public partial class RentBook : ContentPage
         InitializeComponent();
         BindingContext = new RentBookModel();
     }
+
 }

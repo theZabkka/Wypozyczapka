@@ -15,13 +15,14 @@
        ZIndex="0" />
 
 
-        <Image Source="aaa.png"
+        <Image Source="aaaa.png"
            HeightRequest="160"
            WidthRequest="160"
            HorizontalOptions="Center"
            VerticalOptions="Start"
            Margin="0,0,0,0"
-           ZIndex="1" />
+           ZIndex="1" 
+           BackgroundColor="Transparent"/>
 
 
 

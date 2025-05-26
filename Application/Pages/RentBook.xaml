@@ -4,46 +4,66 @@
     x:Name="RentBookPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:viewmodels="clr-namespace:Application.Models"
-    Title="Książki"
-    BackgroundColor="#F8F8FF">
+    Title="Książki">
 
-    <ContentPage.BindingContext>
-        <viewmodels:RentBookModel />
-    </ContentPage.BindingContext>
+    <Grid>
+        <!-- Tło -->
+        <Image Source="tlo.jpg"
+               Aspect="AspectFill"
+               Opacity="0.5"></Image>  <!-- Możesz dostosować przezroczystość -->
+             
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+            <!-- Główna zawartość -->
+            <ScrollView>
+                <VerticalStackLayout Padding="20" Spacing="20">
+                    <Label Text="Książki"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
 
-            <Label Text="Książki"
-                   FontSize="32"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center" />
+                    <CollectionView ItemsSource="{Binding Books}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="10"
+                                   Margin="10"
+                                   CornerRadius="20"
+                                   BackgroundColor="White"
+                                   HasShadow="True">
+                                    <Grid ColumnDefinitions="Auto,*"
+                                      RowDefinitions="Auto">
+                                        <!-- Obraz książki -->
+                                        <Image Grid.Row="0" Grid.Column="0"
+                                           Source="ksionszki.jpg"
+                                           HeightRequest="100"
+                                           WidthRequest="80"
+                                           Aspect="AspectFill"
+                                           VerticalOptions="Center"
+                                           Margin="0,0,10,0" />
 
-            <CollectionView ItemsSource="{Binding Books}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame Padding="15" Margin="10" CornerRadius="20" BackgroundColor="White" HasShadow="True">
-                            <VerticalStackLayout Spacing="10">
-                                <Image Source="book_placeholder.png"
-                                       HeightRequest="150"
-                                       Aspect="AspectFill"
-                                       HorizontalOptions="Center" />
+                                        <!-- Teksty i przycisk -->
+                                        <VerticalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
+                                            <Label Text="{Binding Title}"
+                                               FontAttributes="Bold"
+                                               FontSize="18" 
+                                               TextColor="Gray"/>
+                                            <Label Text="{Binding Author}"
+                                               FontSize="14"
+                                               TextColor="Gray" />
 
-                                <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="18" />
-                                <Label Text="{Binding Author}" FontSize="14" TextColor="Gray" />
-
-                                <Button Text="Wypożycz"
-                                        BackgroundColor="#EDE6D6"
-                                        CornerRadius="15"
-                                        Command="{Binding BindingContext.RentBook, Source={x:Reference RentBookPage}}"
-                                        CommandParameter="{Binding .}" />
-                            </VerticalStackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-        </VerticalStackLayout>
-    </ScrollView>
+                                            <Button Text="Wypożycz"
+                                                BackgroundColor="#EDE6D6"
+                                                CornerRadius="10"
+                                                Command="{Binding BindingContext.RentBookCommand, Source={x:Reference RentBookPage}}"
+                                                CommandParameter="{Binding .}"
+                                                WidthRequest="120"
+                                                HorizontalOptions="Start" />
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </ScrollView>
+    </Grid>
 </ContentPage>
