@@ -12,5 +12,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(RentBook), typeof(RentBook));
         Routing.RegisterRoute(nameof(RentSportItem), typeof(RentSportItem));
         Routing.RegisterRoute(nameof(RentSupply), typeof(RentSupply));
+
+      
     }
 }

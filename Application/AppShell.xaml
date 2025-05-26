@@ -17,21 +17,19 @@
         Title="Strona główna"
         Route="HomePage"
         ContentTemplate="{DataTemplate local:Pages.HomePage}"
-        Shell.TabBarIsVisible="True" />
+        Shell.TabBarIsVisible="False" />
 
         <ShellContent
         Title="Wypożyczenia"
         Route="Wypozyczenia"
         ContentTemplate="{DataTemplate local:Pages.Rent}"
-        Shell.TabBarIsVisible="True"/>
+        Shell.TabBarIsVisible="False"/>
 
         <ShellContent
-        Title="Ustawienia"
-        Route="Settings"
-        ContentTemplate="{DataTemplate local:Pages.Settings}"/>
-       
-        
-    
-    
-    
+         Title="Ustawienia"
+         Route="Settings"
+         ContentTemplate="{DataTemplate local:Pages.Settings}"/>
+
+
+
 </Shell>
