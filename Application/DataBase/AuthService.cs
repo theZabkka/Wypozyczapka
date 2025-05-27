@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.DataBase
 {
-    internal class AuthService
+     internal class AuthService
     {
         private const string AuthStateKey = "AuthState";
         private const string AuthUserIdKey = "LoggedInStudentId";
@@ -32,6 +33,7 @@ namespace Application.DataBase
         {
             Preferences.Default.Remove(AuthStateKey);
             Preferences.Default.Remove(AuthUserIdKey);
+            UserSession.Clear();
         }
     }
 }

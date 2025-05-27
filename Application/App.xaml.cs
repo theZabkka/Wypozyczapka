@@ -1,15 +1,18 @@
-﻿namespace Application
+﻿using Application.DataBase;
+using Application.Services;
+
+namespace Application
 {
     public partial class App : IApplication
     {
         public App()
         {
-            InitializeComponent();
+            var authService = new AuthService();
+            UserSession.SetFromAuthService(authService);
+
+            MainPage = new AppShell();
         }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell()); 
-        }
+        
     }
 }

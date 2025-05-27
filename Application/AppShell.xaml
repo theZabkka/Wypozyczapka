@@ -19,16 +19,20 @@
         ContentTemplate="{DataTemplate local:Pages.HomePage}"
         Shell.TabBarIsVisible="False" />
 
-        <ShellContent
+    <ShellContent
         Title="Wypożyczenia"
         Route="Wypozyczenia"
         ContentTemplate="{DataTemplate local:Pages.Rent}"
         Shell.TabBarIsVisible="False"/>
 
-        <ShellContent
+    <ShellContent
          Title="Ustawienia"
          Route="Settings"
          ContentTemplate="{DataTemplate local:Pages.Settings}"/>
+    <ShellContent
+         Title="Wypożyczone"
+         Route="Wypożyczone"
+         ContentTemplate="{DataTemplate local:Pages.MyRentals}"/>
 
 
 

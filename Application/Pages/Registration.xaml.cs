@@ -1,6 +1,7 @@
 using Application.DataBase;
 using Application.Models;
 using SQLite;
+using Application.Services;
 
 namespace Application.Views;
 
@@ -21,6 +22,7 @@ public partial class Registration : ContentPage
 
         // Dodanie przyk³adowego u¿ytkownika
         _ = AddSampleDataAsync();
+
     }
 
     // Dodajemy przyk³adowego studenta (jeœli jeszcze nie istnieje)
@@ -60,7 +62,8 @@ public partial class Registration : ContentPage
         var user = await _DbService.AuthenticateUserAsync(email, password);
         if (user != null)
         {
-            _authService.Login(user.Id); // Zapis ID u¿ytkownika
+            _authService.Login(user.Id);
+            UserSession.SetUser(user.Id, user.Name);
             await Shell.Current.GoToAsync("//HomePage"); // lub NavigationPage(new HomePage());
         }
         else

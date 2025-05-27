@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Application.Pages.MyRentals"
+             x:Name="MyBorrowedItemsPage"
+             Title="MyRentals">
+    <Grid>
+        <Image Source="tlo.jpg"
+               Aspect="AspectFill"
+               Opacity="0.5" />
+
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="20">
+                <Label Text="Moje wypożyczenia"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+
+                <CollectionView ItemsSource="{Binding BorrowedItems}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10"
+                                   Margin="10"
+                                   CornerRadius="20"
+                                   BackgroundColor="White"
+                                   HasShadow="True">
+                                <Grid ColumnDefinitions="Auto,*"
+                                      RowDefinitions="Auto">
+                                    <Image Grid.Row="0" Grid.Column="0"
+                                           Source="{Binding ImageSource}"
+                                           HeightRequest="100"
+                                           WidthRequest="80"
+                                           Aspect="AspectFill"
+                                           VerticalOptions="Center"
+                                           Margin="0,0,10,0" />
+
+                                    <VerticalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
+                                        <Label Text="{Binding Name}"
+                                               FontAttributes="Bold"
+                                               FontSize="18"
+                                               TextColor="Gray" />
+
+                                        <Button Text="Oddaj"
+                                                BackgroundColor="#F5D0C5"
+                                                CornerRadius="10"
+                                                Command="{Binding BindingContext.ReturnItemCommand, Source={x:Reference MyBorrowedItemsPage}}"
+                                                CommandParameter="{Binding .}"
+                                                WidthRequest="120"
+                                                HorizontalOptions="Start" />
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
