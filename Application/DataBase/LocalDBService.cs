@@ -228,5 +228,6 @@ namespace Application.DataBase
         {
             await _connection.UpdateAsync(supply);
         }
+
     }
 }

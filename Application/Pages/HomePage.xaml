@@ -2,161 +2,140 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Application.Pages.HomePage"
-             BackgroundColor="#F8F8FF"
+             BackgroundColor="#F2F2F2"
              Shell.NavBarIsVisible="False"
              Shell.TabBarIsVisible="False">
 
     <Grid>
-
-        <Image Source="tlo.png"
-               Aspect="AspectFill"
-               Opacity="0.2"
-               ZIndex="0" />
-
-        <!-- Pasek tytułowy z hamburgerem i tytułem -->
+        <!-- Pasek tytułowy -->
         <Border BackgroundColor="White"
-                HeightRequest="60"
-                VerticalOptions="Start"
-                HorizontalOptions="Fill"
-                ZIndex="1">
+HeightRequest="55"
+VerticalOptions="Start"
+HorizontalOptions="Fill"
+ZIndex="1"
+Stroke="LightGray"
+StrokeThickness="1">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="0,0,0,0" />
             </Border.StrokeShape>
-
             <Grid>
-
-                <!-- Hamburger -->
                 <ImageButton Source="flyoutmenuicon.png"
-                             WidthRequest="32"
-                             HeightRequest="32"
-                             BackgroundColor="Transparent"
-                             Clicked="OnMenuClicked"
-                             HorizontalOptions="Start"
-                             VerticalOptions="Center"
-                             ZIndex="1"
-                             Margin="5,0"/>
-
-                <!-- Tytuł -->
+             WidthRequest="32"
+             HeightRequest="32"
+             BackgroundColor="Transparent"
+             Clicked="OnMenuClicked"
+             HorizontalOptions="Start"
+             VerticalOptions="Center"
+             ZIndex="1"
+             Margin="5,0"/>
                 <Label Text="WypożyczApka"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       FontSize="28"
-                       FontAttributes="Bold"
-                       TextColor="Black"
-                       ZIndex="2"/>
+       HorizontalOptions="Center"
+       VerticalOptions="Center"
+       FontSize="23"
+      
+       TextColor="#333"
+       ZIndex="2"/>
             </Grid>
         </Border>
 
-        <!-- Sekcja treści -->
-        <VerticalStackLayout Margin="20,90,20,20" Spacing="15" ZIndex="3">
 
-            <!-- Baner: Wypożyczaj -->
-            <Border BackgroundColor="Transparent"
-                    StrokeThickness="1"
-                    Stroke="Gray"
-                    HeightRequest="70"
-                    Padding="15"
-                    StrokeShape="RoundRectangle 20">
-                <Border.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnWypozyczTapped"/>
-                </Border.GestureRecognizers>
-                <Border.Background>
-                    <RadialGradientBrush Center="0.5,0.5" Radius="0.5">
-                        <GradientStop Color="#a18470" Offset="0.0" />
-                        <GradientStop Color="#c0aea2" Offset="1.0" />
-                    </RadialGradientBrush>
-                </Border.Background>
-                <Border.Shadow>
-                    <Shadow Brush="Black" Opacity="0.4" Offset="0,3" Radius="15" />
-                </Border.Shadow>
-                <Grid ColumnDefinitions="Auto,*"
-                      VerticalOptions="Center">
-                    <Image Source="wypozycz.png"
-                           WidthRequest="30"
-                           HeightRequest="30"
-                           VerticalOptions="Center"/>
-                    <Label Text="Wypożycz"
-                           FontSize="20"
-                           HorizontalOptions="Start"
-                           FontAttributes="Bold"
-                           TextColor="#4A4A4A"
-                           VerticalOptions="Center"
-                           Margin="15,0,0,0"
-                           Grid.Column="1"/>
-                </Grid>
-            </Border>
-
-            <!-- Baner + lista aktualności w jednej ramce -->
-            <Border BackgroundColor="White"
-                    StrokeThickness="1"
-                    StrokeShape="RoundRectangle 20"
-                    Stroke="Black"
-                    Padding="15"
-                    ZIndex="2">
-              
-                    <VerticalStackLayout Spacing="10" VerticalOptions="FillAndExpand">
-
-                    <!-- Baner: Aktualności -->
+        <!-- Treść -->
+        <Grid Margin="0,75,0,20" RowDefinitions="Auto,*" ZIndex="3">
+            <!-- Górna sekcja -->
+            <VerticalStackLayout Spacing="15">
+                <!-- Baner: Wypożycz -->
+                <Border BackgroundColor="Transparent"
+                        StrokeThickness="0"
+                        HeightRequest="70"
+                        Padding="15"
+                        StrokeShape="RoundRectangle 20"
+                        Margin="30,0,30,0">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnWypozyczTapped"/>
+                    </Border.GestureRecognizers>
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#c0aea2" Offset="0.0" />
+                            <GradientStop Color="#ab988c" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Opacity="0.2" Offset="0,2" Radius="10" />
+                    </Border.Shadow>
                     <Grid ColumnDefinitions="Auto,*"
                           VerticalOptions="Center">
-                        <Image Source="news.png"
+                        <Image Source="wypozycz.png"
                                WidthRequest="30"
                                HeightRequest="30"
                                VerticalOptions="Center"/>
-                        <Label Text="Aktualności"
+                        <Label Text="Wypożycz"
                                FontSize="20"
+                               HorizontalOptions="Start"
                                FontAttributes="Bold"
-                               TextColor="#2F4F4F"
+                               TextColor="White"
                                VerticalOptions="Center"
-                               Margin="10,0,0,0"
+                               Margin="15,0,0,0"
                                Grid.Column="1"/>
                     </Grid>
-                    <Border></Border>
-                    <!-- Lista aktualności (scrollowalna) -->
-                    <CollectionView ItemsLayout="VerticalList"
-                                    x:Name="NewsCollectionView"
-                                    VerticalOptions="Fill"
-                                    HeightRequest="500"
-                                    HorizontalOptions="Fill"
-                                    
-                                    >
-                        <!-- Dostosuj wysokość, jeśli trzeba -->
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Border StrokeThickness="0"
-                                        BackgroundColor="#F9F9F9"
-                                        StrokeShape="RoundRectangle 20"
-                                        Margin="0,10"
-                                        Padding="10">
-                                    <Grid RowDefinitions="Auto,Auto"
-                                          ColumnDefinitions="Auto,*">
-                                        <Image Source="{Binding ImageSource}"
-                                               WidthRequest="100"
-                                               HeightRequest="100"
-                                               Margin="0,0,10,0"
-                                               Aspect="AspectFill"
-                                               Grid.RowSpan="2"/>
-                                        <Label Text="{Binding Title}"
-                                               FontSize="18"
-                                               FontAttributes="Bold"
-                                               TextColor="#333"
-                                               Margin="0,0,0,5"
-                                               Grid.Column="1"/>
-                                        <Label Text="{Binding Description}"
-                                               FontSize="14"
-                                               TextColor="#555"
-                                               Grid.Column="1"
-                                               Grid.Row="1"/>
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
+                </Border>
 
-                </VerticalStackLayout>
-            </Border>
+                <!-- Nagłówek: Aktualności -->
+                <BoxView HeightRequest="1" BackgroundColor="#CCCCCC" HorizontalOptions="Fill" />
+                <Grid ColumnDefinitions="Auto,*" VerticalOptions="Center" Padding="0,5">
+                    <Image Source="news.png"
+                           WidthRequest="30"
+                           HeightRequest="30"
+                           VerticalOptions="Center"
+                           Margin="20,0,5,0"/>
+                    <Label Text="Aktualności"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#444"
+                           VerticalOptions="Center"
+                           Margin="10,0,0,0"
+                           Grid.Column="1"/>
+                </Grid>
+                <BoxView HeightRequest="1" BackgroundColor="#CCCCCC" HorizontalOptions="Fill" />
+            </VerticalStackLayout>
 
-        </VerticalStackLayout>
-
+            <!-- Lista -->
+            <CollectionView Grid.Row="1"
+                            x:Name="NewsCollectionView"
+                            ItemsLayout="VerticalList"
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="#F2F2F2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border StrokeThickness="0"
+                                BackgroundColor="White"
+                                StrokeShape="RoundRectangle 10"
+                                Margin="0,5"
+                                Padding="10">
+                            <Grid RowDefinitions="Auto,Auto"
+                                  ColumnDefinitions="Auto,*">
+                                <Image Source="{Binding ImageSource}"
+                                       WidthRequest="100"
+                                       HeightRequest="100"
+                                       Margin="0,0,10,0"
+                                       Aspect="AspectFill"
+                                       Grid.RowSpan="2"/>
+                                <Label Text="{Binding Title}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="#333"
+                                       Margin="0,0,0,5"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding Description}"
+                                       FontSize="14"
+                                       TextColor="#666"
+                                       Grid.Column="1"
+                                       Grid.Row="1"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
     </Grid>
 </ContentPage>

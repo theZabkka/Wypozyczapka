@@ -1,60 +1,119 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Application.Pages.RentSupply"
-             x:Name="RentSupplyPage"
-             Title="RentSupply">
+<ContentPage
+    x:Class="Application.Pages.RentSupply"
+    x:Name="RentSupplyPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Przybory"
+    Shell.NavBarIsVisible="False">
+
     <Grid>
-        <Image Source="tlo.jpg"
-           Aspect="AspectFill"
-           Opacity="0.5" />
 
-        <ScrollView>
-            <VerticalStackLayout Padding="20" Spacing="20">
-                <Label Text="Przybory"
-                   FontSize="32"
+        <!-- Pasek górny z ikoną menu i nazwą aplikacji -->
+        <Border BackgroundColor="White"
+                HeightRequest="55"
+                VerticalOptions="Start"
+                HorizontalOptions="Fill"
+                ZIndex="1"
+                Stroke="LightGray"
+                StrokeThickness="1">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="0,0,0,0" />
+            </Border.StrokeShape>
+            <Grid>
+                <ImageButton Source="flyoutmenuicon.png"
+                             WidthRequest="32"
+                             HeightRequest="32"
+                             BackgroundColor="Transparent"
+                             Clicked="OnMenuClicked"
+                             HorizontalOptions="Start"
+                             VerticalOptions="Center"
+                             ZIndex="1"
+                             Margin="5,0"/>
+                <Label Text="WypożyczApka"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="23"
+                       TextColor="#333"
+                       ZIndex="2"/>
+            </Grid>
+        </Border>
+
+        <!-- Tło -->
+        <Image Source="background.jpg"
+               Aspect="AspectFill"
+               Opacity="0.5" />
+
+        <!-- Pasek nagłówka z tytułem i powrotem -->
+        <Grid VerticalOptions="Start" Margin="0,70,0,0" ZIndex="2" HeightRequest="40">
+            <ImageButton Source="backarrow.png"
+                         BackgroundColor="Transparent"
+                         WidthRequest="32"
+                         HeightRequest="32"
+                         Clicked="OnBackClicked"
+                         HorizontalOptions="Start"
+                         VerticalOptions="Center"
+                         Margin="20,0"/>
+            <Label Text="Przybory"
+                   FontSize="28"
                    FontAttributes="Bold"
-                   HorizontalOptions="Center" />
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   TextColor="#333" />
+        </Grid>
 
-                <CollectionView ItemsSource="{Binding Supplies}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame Padding="10"
+        <!-- Lista przyborów -->
+        <ScrollView VerticalOptions="FillAndExpand" Margin="0,120,0,0" ZIndex="2">
+            <CollectionView ItemsSource="{Binding Supplies}"
+                            Margin="20,0,20,20"
+                            VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10"
                                Margin="10"
                                CornerRadius="20"
                                BackgroundColor="White"
                                HasShadow="True">
-                                <Grid ColumnDefinitions="Auto,*"
+                            <Grid ColumnDefinitions="Auto,*,Auto"
                                   RowDefinitions="Auto">
-                                    <Image Grid.Row="0" Grid.Column="0"
+                                <!-- Obrazek -->
+                                <Image Grid.Row="0" Grid.Column="0"
                                        Source="{Binding ImageSource}"
-                                       HeightRequest="100"
-                                       WidthRequest="80"
+                                       HeightRequest="90"
+                                       WidthRequest="70"
                                        Aspect="AspectFill"
                                        VerticalOptions="Center"
                                        Margin="0,0,10,0" />
 
-                                    <VerticalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
-                                        <Label Text="{Binding Name}"
+                                <!-- Teksty -->
+                                <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="5" VerticalOptions="Center">
+                                    <Label Text="{Binding Name}"
                                            FontAttributes="Bold"
                                            FontSize="18"
                                            TextColor="Gray" />
+                                </VerticalStackLayout>
 
-                                        <Button Text="Wypożycz"
-                                            BackgroundColor="#EDE6D6"
-                                            CornerRadius="10"
-                                            Command="{Binding BindingContext.RentSupplyCommand, Source={x:Reference RentSupplyPage}}"
-                                            CommandParameter="{Binding .}"
-                                            WidthRequest="120"
-                                            HorizontalOptions="Start" />
-                                    </VerticalStackLayout>
-                                </Grid>
-                            </Frame>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </VerticalStackLayout>
+                                <!-- Przycisk -->
+                                <Button Grid.Row="0" Grid.Column="2"
+                                        Text="Wypożycz"
+                                        Padding="0"
+                                        FontSize="15"
+                                        TextColor="Grey"
+                                        BackgroundColor="#EDE6D6"
+                                        CornerRadius="10"
+                                        Command="{Binding BindingContext.RentSupplyCommand, Source={x:Reference RentSupplyPage}}"
+                                        CommandParameter="{Binding .}"
+                                        WidthRequest="80"
+                                        HeightRequest="80"
+                                        Margin="10"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Center" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </ScrollView>
-    </Grid>
 
+    </Grid>
 </ContentPage>

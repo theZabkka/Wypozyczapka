@@ -2,38 +2,35 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Application.Views.Registration"
-             BackgroundColor="#F8F8FF"
+             BackgroundColor="#c0aea2"
              Shell.TabBarIsVisible="False"
              Shell.NavBarIsVisible="False"
              Title="Rejestracja">
 
     <Grid>
 
-        <Image Source="tlo.png"
-       Aspect="AspectFill"
-       Opacity="0.5"
-       ZIndex="0" />
+        
 
 
-        <Image Source="aaaa.png"
-           HeightRequest="160"
-           WidthRequest="160"
-           HorizontalOptions="Center"
-           VerticalOptions="Start"
-           Margin="0,0,0,0"
-           ZIndex="1" 
-           BackgroundColor="Transparent"/>
+        
 
 
 
-        <Border BackgroundColor="white" Margin="30,220,30,180" HeightRequest="500">
+        <Border BackgroundColor="white" Margin="20,220,20,180" HeightRequest="600">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="20" />
             </Border.StrokeShape>
-            <VerticalStackLayout Padding="30" Spacing="40" Margin="0"
+            <VerticalStackLayout Padding="30" Spacing="20" Margin="0"
                         
                          HorizontalOptions="Center">
-
+                <Image Source="aaaa.png"
+                       HeightRequest="140"
+                       WidthRequest="140"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Margin="0,0,0,0"
+                       
+                       BackgroundColor="Transparent"/>      
 
                 <Label Text="Logowanie"
                        

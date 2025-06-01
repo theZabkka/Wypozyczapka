@@ -4,69 +4,125 @@
     x:Name="RentBookPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Książki">
+    Title="Książki"
+    Shell.NavBarIsVisible="False">
 
     <Grid>
+        
+        <Border BackgroundColor="White"
+        HeightRequest="55"
+        VerticalOptions="Start"
+        HorizontalOptions="Fill"
+        ZIndex="1"
+        Stroke="LightGray"
+        StrokeThickness="1">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="0,0,0,0" />
+            </Border.StrokeShape>
+            <Grid>
+                <ImageButton Source="flyoutmenuicon.png"
+                     WidthRequest="32"
+                     HeightRequest="32"
+                     BackgroundColor="Transparent"
+                     Clicked="OnMenuClicked"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Center"
+                     ZIndex="1"
+                     Margin="5,0"/>
+                <Label Text="WypożyczApka"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="23"
+               
+               TextColor="#333"
+               ZIndex="2"/>
+            </Grid>
+        </Border>
+
         <!-- Tło -->
-        <Image Source="tlo.jpg"
+        <Image Source="background.jpg"
                Aspect="AspectFill"
-               Opacity="0.5"></Image>  <!-- Możesz dostosować przezroczystość -->
-             
+               Opacity="0.5"
+               />
 
-            <!-- Główna zawartość -->
-            <ScrollView>
-                <VerticalStackLayout Padding="20" Spacing="20">
-                    <Label Text="Książki"
-                       FontSize="32"
+        <Grid VerticalOptions="Start" Margin="0,70,0,0" ZIndex="2" HeightRequest="40">
+            <!-- Przycisk w lewym rogu -->
+            <ImageButton
+        Source="backarrow.png"
+        BackgroundColor="Transparent"
+        WidthRequest="32"
+        HeightRequest="32"
+        Clicked="OnBackClicked"
+        HorizontalOptions="Start"
+        VerticalOptions="Center"
+        Margin="20,0"/>
+
+            <!-- Napis wyśrodkowany horyzontalnie -->
+            <Label Text="Książki"
+           FontSize="28"
+           FontAttributes="Bold"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           TextColor="#333" />
+        </Grid>
+
+
+
+        <!-- Lista książek w ScrollView, przesuwalna -->
+        <ScrollView VerticalOptions="FillAndExpand" Margin="0,120,0,0" ZIndex="2">
+            <CollectionView ItemsSource="{Binding Books}"
+                            Margin="20,0,20,20"
+                            VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10"
+           Margin="10"
+           CornerRadius="20"
+           BackgroundColor="White"
+           HasShadow="True">
+                            <Grid ColumnDefinitions="Auto,*,Auto"
+              RowDefinitions="Auto">
+                                <!-- Obraz książki -->
+                                <Image Grid.Row="0" Grid.Column="0"
+                   Source="{Binding ImageSource}"
+                   HeightRequest="90"
+                   WidthRequest="70"
+                   Aspect="AspectFill"
+                   VerticalOptions="Center"
+                   Margin="0,0,10,0" />
+
+                                <!-- Teksty -->
+                                <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="5" VerticalOptions="Center">
+                                    <Label Text="{Binding Title}"
                        FontAttributes="Bold"
-                       HorizontalOptions="Center" />
+                       FontSize="18"
+                       TextColor="Gray" />
+                                    <Label Text="{Binding Author}"
+                       FontSize="14"
+                       TextColor="Gray" />
+                                </VerticalStackLayout>
 
-                    <CollectionView ItemsSource="{Binding Books}">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Frame Padding="10"
-                                   Margin="10"
-                                   CornerRadius="20"
-                                   BackgroundColor="White"
-                                   HasShadow="True">
-                                    <Grid ColumnDefinitions="Auto,*"
-                                      RowDefinitions="Auto">
-                                        <!-- Obraz książki -->
-                                    <Image Grid.Row="0" Grid.Column="0"
-                                           Source="{Binding ImageSource}"
-                                           HeightRequest="100"
-                                           WidthRequest="80"
-                                           Aspect="AspectFill"
-                                           VerticalOptions="Center"
-                                           Margin="0,0,10,0" >
+                                <!-- Przycisk po prawej stronie -->
+                                <Button Grid.Row="0" Grid.Column="2"
+                    Text="Wypożycz"
+                                        Padding="0"
+                    FontSize="15"
+                    TextColor="Grey"
+                    BackgroundColor="#EDE6D6"
+                    CornerRadius="10"
+                    Command="{Binding BindingContext.RentBookCommand, Source={x:Reference RentBookPage}}"
+                    CommandParameter="{Binding .}"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Margin="10"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
 
-
-                                    </Image>
-
-                                    <!-- Teksty i przycisk -->
-                                        <VerticalStackLayout Grid.Column="1" Spacing="5" VerticalOptions="Center">
-                                            <Label Text="{Binding Title}"
-                                               FontAttributes="Bold"
-                                               FontSize="18" 
-                                               TextColor="Gray"/>
-                                            <Label Text="{Binding Author}"
-                                               FontSize="14"
-                                               TextColor="Gray" />
-
-                                            <Button Text="Wypożycz"
-                                                BackgroundColor="#EDE6D6"
-                                                CornerRadius="10"
-                                                Command="{Binding BindingContext.RentBookCommand, Source={x:Reference RentBookPage}}"
-                                                CommandParameter="{Binding .}"
-                                                WidthRequest="120"
-                                                HorizontalOptions="Start" />
-                                        </VerticalStackLayout>
-                                    </Grid>
-                                </Frame>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </VerticalStackLayout>
-            </ScrollView>
     </Grid>
 </ContentPage>

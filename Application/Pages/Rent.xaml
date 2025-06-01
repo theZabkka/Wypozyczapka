@@ -3,110 +3,136 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Application.Pages.Rent"
              Title="Wypożycz"
-             BackgroundColor="white">
+             BackgroundColor="#F2F2F2"
+             Shell.NavBarIsVisible="False">
     <Grid>
 
-        <!-- Obraz jako tło -->
-        <Image Source="tlo.jpg"
-               Aspect="AspectFill"
-               Opacity="0.3"
-               HorizontalOptions="FillAndExpand"
-               VerticalOptions="FillAndExpand" />
-        
-        <VerticalStackLayout Padding="20" Spacing="30"
-                         HorizontalOptions="FillAndExpand"
-                         VerticalOptions="FillAndExpand">
+      
+            <Border BackgroundColor="White"
+                HeightRequest="55"
+                VerticalOptions="Start"
+                HorizontalOptions="Fill"
+                ZIndex="1"
+                Stroke="LightGray"
+                StrokeThickness="1">        
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="0,0,0,0" />
+                </Border.StrokeShape>
+                <Grid>
+                    <ImageButton Source="flyoutmenuicon.png"
+                 WidthRequest="32"
+                 HeightRequest="32"
+                 BackgroundColor="Transparent"
+                 Clicked="OnMenuClicked"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Center"
+                 ZIndex="1"
+                 Margin="5,0"/>
+                    <Label Text="WypożyczApka"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           FontSize="23"
+           
+           TextColor="#333"
+           ZIndex="2"/>
+                </Grid>
+            </Border>
+
+            <VerticalStackLayout Padding="20" Spacing="30"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="CenterAndExpand"> 
 
             <!-- Tytuł -->
             <Label Text="WypożyczApka"
-        FontSize="32"
-        TextColor="Transparent"
-        FontAttributes="Bold"
-        HorizontalOptions="Center"
-        HorizontalTextAlignment="Center" />
+                   FontSize="32"
+                   TextColor="Transparent"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
 
             <!-- Kafle kategorii -->
-        <VerticalStackLayout Spacing="20"
-                             HorizontalOptions="FillAndExpand"
-                             VerticalOptions="FillAndExpand">
+            <VerticalStackLayout Spacing="20"
+                                 HorizontalOptions="FillAndExpand"
+                                 VerticalOptions="Center"> <!-- można zostawić Center lub FillAndExpand -->
 
-            <!-- Książki -->
-            <Border Stroke="Black"
-                    StrokeThickness="2"
-                    StrokeShape="RoundRectangle 15"
-                    BackgroundColor="Transparent"
-                    HeightRequest="150"
-                    HorizontalOptions="FillAndExpand">
+                <!-- Książki -->
+                <Border Stroke="Black"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 15"
+                        BackgroundColor="Transparent"
+                        HeightRequest="150"
+                        HorizontalOptions="FillAndExpand">
 
-                <Grid>
-                    <Image Source="ksionszki.jpg" Aspect="AspectFill" />
+                    <Grid>
+                        <Image Source="ksionszki.jpg" Aspect="AspectFill" />
 
-                    <Label Text="Książki"
-                           FontSize="24"
-                           FontAttributes="Bold"
-                           TextColor="White"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           HorizontalTextAlignment="Center"
-                           VerticalTextAlignment="Center" />
+                        <Label Text="Książki"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center" />
 
-                    <Button BackgroundColor="Transparent"
-                            Command="{Binding GoToBooksCommand}" />
-                </Grid>
-            </Border>
+                        <Button BackgroundColor="Transparent"
+                                Command="{Binding GoToBooksCommand}" />
+                    </Grid>
+                </Border>
 
-            <!-- Sprzęt sportowy -->
-            <Border Stroke="Black"
-                    StrokeThickness="2"
-                    StrokeShape="RoundRectangle 15"
-                    BackgroundColor="Transparent"
-                    HeightRequest="150"
-                    HorizontalOptions="FillAndExpand">
+                <!-- Sprzęt sportowy -->
+                <Border Stroke="Black"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 15"
+                        BackgroundColor="Transparent"
+                        HeightRequest="150"
+                        HorizontalOptions="FillAndExpand">
 
-                <Grid>
-                    <Image Source="sprzentsportowy.jpg" Aspect="AspectFill" />
+                    <Grid>
+                        <Image Source="sprzentsportowy.jpg" Aspect="AspectFill" />
 
-                    <Label Text="Sprzęt sportowy"
-                           FontSize="24"
-                           FontAttributes="Bold"
-                           TextColor="White"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           HorizontalTextAlignment="Center"
-                           VerticalTextAlignment="Center" />
+                        <Label Text="Sprzęt sportowy"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center" />
 
-                    <Button BackgroundColor="Transparent"
-                            Command="{Binding GoToSportCommand}" />
-                </Grid>
-            </Border>
+                        <Button BackgroundColor="Transparent"
+                                Command="{Binding GoToSportCommand}" />
+                    </Grid>
+                </Border>
 
-            <!-- Przybory -->
-            <Border Stroke="Black"
-                    StrokeThickness="2"
-                    StrokeShape="RoundRectangle 15"
-                    BackgroundColor="Transparent"
-                    HeightRequest="150"
-                    HorizontalOptions="FillAndExpand">
+                <!-- Przybory -->
+                <Border Stroke="Black"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 15"
+                        BackgroundColor="Transparent"
+                        HeightRequest="150"
+                        HorizontalOptions="FillAndExpand">
 
-                <Grid>
-                    <Image Source="przyboryszkolne.jpg" Aspect="AspectFill" />
+                    <Grid>
+                        <Image Source="przyboryszkolne.jpg" Aspect="AspectFill" />
 
-                    <Label Text="Przybory"
-                           FontSize="24"
-                           FontAttributes="Bold"
-                           TextColor="White"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           HorizontalTextAlignment="Center"
-                           VerticalTextAlignment="Center" />
+                        <Label Text="Przybory"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center" />
 
-                    <Button BackgroundColor="Transparent"
-                            Command="{Binding GoToSupplyCommand}" />
-                </Grid>
-            </Border>
+                        <Button BackgroundColor="Transparent"
+                                Command="{Binding GoToSupplyCommand}" />
+                    </Grid>
+                </Border>
+
+            </VerticalStackLayout>
 
         </VerticalStackLayout>
 
-    </VerticalStackLayout>
-        </Grid>
+    </Grid>
 </ContentPage>

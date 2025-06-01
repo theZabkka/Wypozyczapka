@@ -8,5 +8,12 @@ public partial class RentBook : ContentPage
         InitializeComponent();
         BindingContext = new RentBookModel();
     }
-
+    private void OnMenuClicked(object sender, EventArgs e)
+    {
+        Shell.Current.FlyoutIsPresented = true;
+    }
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(".."); // wraca do poprzedniej strony
+    }
 }

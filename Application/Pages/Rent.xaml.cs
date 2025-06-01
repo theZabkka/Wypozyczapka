@@ -41,6 +41,10 @@ namespace Application.Pages
             //SportCollection.ItemsSource = sports;
             //SupplyCollection.ItemsSource = supplies;
         }
+        private void OnMenuClicked(object sender, EventArgs e)
+        {
+            Shell.Current.FlyoutIsPresented = true;
+        }
 
         //private async void OnBorrowBookClicked(object sender, EventArgs e)
         //{

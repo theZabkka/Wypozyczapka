@@ -5,7 +5,7 @@
              x:Name="MyBorrowedItemsPage"
              Title="MyRentals">
     <Grid>
-        <Image Source="tlo.jpg"
+        <Image Source="background.jpg"
                Aspect="AspectFill"
                Opacity="0.5" />
 
