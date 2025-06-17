@@ -1,9 +1,17 @@
-namespace Application.Pages;
+﻿using Application.ViewModels;
 
-public partial class MyRentals : ContentPage
+namespace Application.Pages
 {
-	public MyRentals()
-	{
-		InitializeComponent();
-	}
+    public partial class MyRentals : ContentPage
+    {
+        public MyRentals()
+        {
+            InitializeComponent();
+            BindingContext = new MyRentalsViewModel(); // ← kluczowe
+        }
+        private void OnMenuClicked(object sender, EventArgs e)
+        {
+            Shell.Current.FlyoutIsPresented = true;
+        }
+    }
 }

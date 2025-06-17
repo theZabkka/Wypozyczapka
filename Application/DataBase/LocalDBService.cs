@@ -228,6 +228,18 @@ namespace Application.DataBase
         {
             await _connection.UpdateAsync(supply);
         }
+        public async Task<List<object>> GetAllBorrowedItemsAsync()
+        {
+            var borrowedBooks = await _connection.Table<Book>().Where(b => b.IsBorrowed).ToListAsync();
+            var borrowedSportItems = await _connection.Table<SportItem>().Where(s => s.IsBorrowed).ToListAsync();
+            var borrowedSupplies = await _connection.Table<Supply>().Where(s => s.IsBorrowed).ToListAsync();
 
+            var allItems = new List<object>();
+            allItems.AddRange(borrowedBooks);
+            allItems.AddRange(borrowedSportItems);
+            allItems.AddRange(borrowedSupplies);
+
+            return allItems;
+        }
     }
 }

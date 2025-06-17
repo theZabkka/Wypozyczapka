@@ -1,19 +1,25 @@
 using Application.Models;
-namespace Application.Pages;
+using Microsoft.Maui.Controls;
 
-public partial class RentBook : ContentPage
+namespace Application.Pages
 {
-    public RentBook()
+    public partial class RentBook : ContentPage
     {
-        InitializeComponent();
-        BindingContext = new RentBookModel();
-    }
-    private void OnMenuClicked(object sender, EventArgs e)
-    {
-        Shell.Current.FlyoutIsPresented = true;
-    }
-    private async void OnBackClicked(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync(".."); // wraca do poprzedniej strony
+        public RentBook()
+        {
+            InitializeComponent();
+            BindingContext = new RentBookModel();
+        }
+
+        private void OnMenuClicked(object sender, EventArgs e)
+        {
+            Shell.Current.FlyoutIsPresented = true;
+        }
+
+        private async void OnBackClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("..");
+        }
     }
 }
+

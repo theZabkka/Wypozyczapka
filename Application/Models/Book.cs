@@ -1,20 +1,28 @@
-﻿using SQLite;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using SQLite;
 
 namespace Application.Models
 {
-    public class Book
+    public partial class Book : ObservableObject
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public string Author { get; set; }
+        [ObservableProperty]
+        private string author;
 
-        public string Title { get; set; }
+        [ObservableProperty]
+        private string title;
+        public string Name => Title;
 
-        public bool IsBorrowed { get; set; }
 
-        public string ImageSource { get; set; }
-        public int BorrowedBy { get; set; }
+        [ObservableProperty]
+        private bool isBorrowed;
 
+        [ObservableProperty]
+        private string imageSource;
+
+        [ObservableProperty]
+        private int borrowedBy;
     }
 }
